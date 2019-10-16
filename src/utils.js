@@ -1,4 +1,4 @@
-const baseUrl = 'https://api.spacexdata.com/v2';
+const baseUrl = 'https://www.strava.com/api/v3';
 const getUrl = endpoint => `${baseUrl}/${endpoint}`;
 const getData = ({ data }) => data;
 const addOrderSort = ({ baseScope, order, sort }) => {
@@ -15,9 +15,14 @@ const addOrderSort = ({ baseScope, order, sort }) => {
   return newUrl;
 };
 
+const metersToFeet = val => val * 3.28084;
+const metersToMiles = val => val * 0.000621371;
+
 module.exports = {
   addOrderSort,
   baseUrl,
   getUrl,
   getData,
+  metersToFeet,
+  metersToMiles,
 };
